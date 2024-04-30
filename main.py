@@ -5,22 +5,27 @@ from graphic_arts.start_game_banner import run_screensaver
 def attack(char_name: str, char_class: str) -> str:
     """Атака."""
     if char_class == 'warrior':
-        return (f'{char_name} нанёс урон противнику равный {5+randint(3, 5)}')
+        return (
+            f'{char_name} нанёс урон противнику равный {5 + randint(3, 5)}'
+            )
     if char_class == 'mage':
-        return (f'{char_name} нанёс урон противнику равный {5+randint(5, 10)}')
+        return (
+            f'{char_name} нанёс урон противнику равный {5 + randint(5, 10)}')
     if char_class == 'healer':
-        return (f'{char_name} нанёс урон противнику равный {5+randint(-3,-1)}')
+        return (
+            f'{char_name} нанёс урон противнику равный {5 + randint(-3, -1)}'
+            )
     return (f'{char_name} не атаковал')
 
 
 def defence(char_name: str, char_class: str) -> str:
     """Защита."""
     if char_class == 'warrior':
-        return (f'{char_name} блокировал {10+randint(5,10)} урона')
+        return (f'{char_name} блокировал {10+randint(5, 10)} урона')
     if char_class == 'mage':
-        return (f'{char_name} блокировал {10+randint(-2,2)} урона')
+        return (f'{char_name} блокировал {10+randint(-2, 2)} урона')
     if char_class == 'healer':
-        return (f'{char_name} блокировал {10+randint(2,5)} урона')
+        return (f'{char_name} блокировал {10+randint(2, 5)} урона')
     return (f'{char_name} не защищался')
 
 
@@ -112,4 +117,4 @@ if __name__ == '__main__':
     print('Ты можешь выбрать один из трёх путей силы:')
     print('Воитель, Маг, Лекарь')
     char_class: str = choice_char_class()
-    print(start_training(char_name, char_class)) 
+    print(start_training(char_name, char_class))
